@@ -13,7 +13,7 @@ object Test_Testconf : BuildType({
             scriptContent = "echo 'Hello World!'"
         }
         script {
-            scriptContent = "./hello.sh"
+            scriptContent = "./greet.sh ryuichi"
         }
     }
 })
