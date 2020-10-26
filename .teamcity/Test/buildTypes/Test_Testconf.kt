@@ -7,10 +7,6 @@ object Test_Testconf : BuildType({
     uuid = "f479618d-2b13-491e-8eed-516bba9a1862"
     name = "testconf"
 
-    vcs {
-        root(AbsoluteId("localgit"))
-    }
-
     steps {
         script {
             name = "test-step"
