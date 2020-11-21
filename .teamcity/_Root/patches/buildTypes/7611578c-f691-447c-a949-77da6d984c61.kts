@@ -2,6 +2,7 @@ package _Root.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
 
@@ -17,6 +18,12 @@ create(uuid("df670dfb-0b52-4cf7-ab82-30b8c7c9c289"), BuildType({
 
     vcs {
         root(AbsoluteId("MySample_HttpsGithubComRyu1knSandboxTeamcitySampleGitRefsHeadsMaster"))
+    }
+
+    steps {
+        script {
+            scriptContent = "./greet.sh"
+        }
     }
 
     triggers {
