@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  teamcity-server-instance:
+    image: jetbrains/teamcity-server
+    ports:
+      - 8080:8111
+    volumes:
+      - ./teamcity-service/data:/data/teamcity_server/datadir
+      - ./teamcity-service/log:/opt/teamcity/logs
+      - .:/git-repos/sample-project
+      - /git-repos/sample-project/teamcity-service/   # Excluding teamcity-service directory
+  teamcity-agent:
+    image: jetbrains/teamcity-minimal-agent
+    volumes:
+      - ./teamcity-service/agentconf:/data/teamcity_agent/conf
+    environment:
+      - SERVER_URL=http://teamcity-server-instance:8111
+      - AGENT_TOKEN=my-agent-token

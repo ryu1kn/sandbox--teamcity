@@ -1,0 +1,7 @@
+/teamcity-service/agentconf/*
+!/teamcity-service/agentconf/.gitkeep
+/teamcity-service/data/*
+!/teamcity-service/data/.gitkeep
+/teamcity-service/log/*
+!/teamcity-service/log/.gitkeep
+/.idea/
